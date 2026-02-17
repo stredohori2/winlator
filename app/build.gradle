@@ -72,12 +72,12 @@ downloadProton.dependsOn(downloadImageFS)
 preBuild.dependsOn(downloadProton)
 
 android {
-    namespace 'com.winlator.cmod'
+    namespace 'com.pubg.imobile'
     // Keep compileSdk from your current config. If you want to match Termux-X11, you could set to 34.
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.winlator.cmod"
+        applicationId "com.pubg.imobile"
         minSdkVersion 26
         // We’re preserving Winlator’s request to keep targetSdkVersion at 28
         targetSdkVersion 28

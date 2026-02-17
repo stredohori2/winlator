@@ -188,7 +188,7 @@ static VkResult enumerate_physical_devices() {
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_winlator_cmod_core_GPUInformation_getVulkanVersion(JNIEnv *env, jclass obj, jstring driverName, jobject context) {
+Java_com_pubg_imobile_core_GPUInformation_getVulkanVersion(JNIEnv *env, jclass obj, jstring driverName, jobject context) {
     VkPhysicalDeviceProperties props = {};
     char *driverVersion;
 
@@ -217,7 +217,7 @@ Java_com_winlator_cmod_core_GPUInformation_getVulkanVersion(JNIEnv *env, jclass 
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_winlator_cmod_core_GPUInformation_getRenderer(JNIEnv *env, jclass obj, jstring driverName, jobject context) {
+Java_com_pubg_imobile_core_GPUInformation_getRenderer(JNIEnv *env, jclass obj, jstring driverName, jobject context) {
     VkPhysicalDeviceProperties props = {};
     char *renderer;
 
@@ -244,7 +244,7 @@ Java_com_winlator_cmod_core_GPUInformation_getRenderer(JNIEnv *env, jclass obj, 
 }
 
 JNIEXPORT jobjectArray JNICALL
-Java_com_winlator_cmod_core_GPUInformation_enumerateExtensions(JNIEnv *env, jclass obj, jstring driverName, jobject context) {
+Java_com_pubg_imobile_core_GPUInformation_enumerateExtensions(JNIEnv *env, jclass obj, jstring driverName, jobject context) {
     jobjectArray extensions;
     VkResult result;
     uint32_t extensionCount;
