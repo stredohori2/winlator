@@ -3,9 +3,9 @@ name: Android CI
 
 on:
   push:
-    branches: [ "bump_sdk_ndk" ]
+    branches: [ "force_refresh_rate" ]
   pull_request:
-    branches: [ "bump_sdk_ndk" ]
+    branches: [ "force_refresh_rate" ]
 
 jobs:
   build:
