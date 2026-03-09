@@ -220,12 +220,33 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         }
     }
 
+  private float pickHighestRefreshRate() {
+    	android.view.Display display = getWindowManager().getDefaultDisplay();
+    	android.view.Display.Mode[] modes = display.getSupportedModes();
+    	
+    	float maxRefresh = 0f;
+    	
+    	for (android.view.Display.Mode mode : modes) {
+			if (mode.getRefreshRate() > maxRefresh)
+    	    	maxRefresh = mode.getRefreshRate();
+    	}
 
+    	Log.d("XServerDisplayActivity", "Picking refresh rate " + maxRefresh);
+
+    	return maxRefresh;
+    }
+
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppUtils.hideSystemUI(this);
         AppUtils.keepScreenOn(this);
+  
+        android.view.WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.preferredRefreshRate = pickHighestRefreshRate();
+        getWindow().setAttributes(params);
+        
         setContentView(R.layout.xserver_display_activity);
 
         preloaderDialog = new PreloaderDialog(this);
@@ -1927,6 +1948,7 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
     }
 
 }
+
 
 
 
