@@ -3,9 +3,9 @@ name: Android CI
 
 on:
   push:
-    branches: [ "force_refresh_rate" ]
+    branches: [ "add_proton_content" ]
   pull_request:
-    branches: [ "force_refresh_rate" ]
+    branches: [ "add_proton_content" ]
 
 jobs:
   build:
